@@ -27,7 +27,7 @@ const getContacts = function(){
 
 const getContact = (contactId) =>
 {  return db.one(`
-    SELECT id FROM contacts WHERE id=$1::int LIMIT 1
+    SELECT * FROM contacts WHERE id=$1::int LIMIT 1
     `,
     [contactId])
     .catch(error => error);}
